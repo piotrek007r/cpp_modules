@@ -18,8 +18,11 @@ int	main(void)
 	str			exit;
 
 	add = "ADD";
-	search = "SEARH";
+	search = "SEARCH";
 	exit = "EXIT";
+
+	system("clear");
+
 	while (1)
 	{
 		std::cout << "please type ADD, SEARCH or EXIT" << std::endl;

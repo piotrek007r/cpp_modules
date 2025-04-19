@@ -82,8 +82,9 @@ void	Phonebook::search(void)
 		std::cout << std::setw(10) << trunkStr(contact_arr[i].getNickname())  << std::endl;
 		i++;
 	}
-
+    std::cout << std::endl;
 	std::cout << "type a index of chosen contact" << std::endl;
+    
 	while(1)
 	{
 		std::getline(std::cin, input);
@@ -99,4 +100,5 @@ void	Phonebook::search(void)
 	std::cout << "Nick Name :" << contact_arr[index - 1].getNickname() << std::endl;
 	std::cout << "Phone Number :" << contact_arr[index - 1].getPhone() << std::endl;
 	std::cout << "Darkest Secret :" << contact_arr[index - 1].getSecret() << std::endl;
+    std::cout << std::endl;
 }
