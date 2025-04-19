@@ -1,6 +1,5 @@
 #include <iostream>
 
-using namespace std;
 
 void toUpper(char **str)
 {
@@ -15,7 +14,7 @@ void toUpper(char **str)
                 str[i][j] = str[i][j] - 32;
             j++;
         }
-        cout << str[i] << " ";
+        std::cout << str[i] << " ";
         i++;
     }
 }
@@ -23,10 +22,10 @@ void toUpper(char **str)
 int main(int argc, char **argv)
 {
     if(argc == 1)
-        cout << "LOUD AND UNBEARABLE FEEDBACK NOIS" << endl;
+        std::cout << "LOUD AND UNBEARABLE FEEDBACK NOIS" << std::endl;
     else
     {
         toUpper(argv);
-        cout << endl;
+        std::cout << std::endl;
     }
 }
