@@ -1,6 +1,8 @@
 SRC = *.cpp
-NAME = phonebook
-CC = c++ -Wall -Wextra -Werror -std=c++98
+NAME = zombie
+# CC = c++ -Wall -Wextra -Werror -std=c++98
+CC = c++
+
 
 all: $(NAME)
 
