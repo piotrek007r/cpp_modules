@@ -1,3 +1,14 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/bin/g++-11"
+    "C_Cpp.default.compilerPath": "/usr/bin/g++-11",
+    "files.associations": {
+        "typeinfo": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "compare": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp"
+    }
 }

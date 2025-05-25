@@ -1,5 +1,5 @@
 SRC = *.cpp
-NAME = zombie
+NAME = strreplace
 CC = c++ -Wall -Wextra -Werror -std=c++98
 
 
@@ -13,4 +13,4 @@ clean:
 
 fclean: clean
 
-re: fclean all
+re: fclean all+
