@@ -10,6 +10,7 @@
 
 typedef std::string str;
 typedef std::ifstream ifstream;
+typedef std::ofstream ofstream;
 typedef std::stringstream stringstream;
 
 #endif
