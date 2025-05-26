@@ -1,23 +1,6 @@
 #include <iostream>
 
-
-void toUpper(char **str)
-{
-    int i = 1;
-
-    while(str[i])
-    {
-        int j = 0;
-        while(str[i][j])
-        {
-            if(str[i][j] <= 'z' && str[i][j] >= 'a')
-                str[i][j] = str[i][j] - 32;
-            j++;
-        }
-        std::cout << str[i] << " ";
-        i++;
-    }
-}
+typedef std::string string;
 
 int main(int argc, char **argv)
 {
@@ -25,7 +8,15 @@ int main(int argc, char **argv)
         std::cout << "LOUD AND UNBEARABLE FEEDBACK NOIS" << std::endl;
     else
     {
-        toUpper(argv);
-        std::cout << std::endl;
+        for(int i = 1; i < argc; i++)
+        {
+            string str = argv[i];
+            for (size_t j = 0; j < str.length(); ++j) {
+                str[j] = std::toupper(str[j]);
+            }
+            std::cout << str << " ";
+        }
+    std::cout << std::endl;
     }
+    return 0;
 }

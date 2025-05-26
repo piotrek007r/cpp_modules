@@ -82,9 +82,17 @@ void	Phonebook::search(void)
 		std::cout << std::setw(10) << trunkStr(contact_arr[i].getNickname())  << std::endl;
 		i++;
 	}
+
+	if(counter == 0)
+	{
+		std::cout << std::endl;
+		std::cout << "List is empty, unable to search for anytching!" << std::endl;
+		return;
+	}
+
     std::cout << std::endl;
 	std::cout << "type a index of chosen contact" << std::endl;
-    
+
 	while(1)
 	{
 		std::getline(std::cin, input);

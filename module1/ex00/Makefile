@@ -1,16 +1,26 @@
-SRC = *.cpp
 NAME = zombie
-CC = c++ -Wall -Wextra -Werror -std=c++98
 
+SRCS = *.cpp
+OBJS = ${SRCS:.cpp=.o}
+
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -f
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(SRC) -o $(NAME)
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 clean:
-	rm -rf $(NAME)
+	@$(RM) $(OBJS)
 
 fclean: clean
+	@$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

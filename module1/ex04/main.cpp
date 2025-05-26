@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv)
 {
-    if(argc < 4 || argc > 4)
+    if(argc < 3)
     {
         cout << "Invalid number of parameters" << endl;
         return 1;
@@ -14,41 +14,35 @@ int main(int argc, char **argv)
     str s2 = argv[3];
     str newline;
     size_t pos = 0;
-    size_t s1len = s1.length();
+
+
+    // 1. connect string ta a file name
     ifstream inFile(file.c_str());
-
-    if(s1.empty())
-    {
-        cout << "Second parameter connot be empty!";
-        return 1;
-    }
-
     if(inFile.fail())
     {
         cout << "Failed to open a file" << endl;
         return 1;
     }
-
+    // 2. read a string from file and save it
     stringstream buffer;
     buffer << inFile.rdbuf();
     newline = buffer.str();
-    inFile.close();
 
     while(true)
     {
-        pos = newline.find(s1, pos);
+        pos = newline.find("yes", pos + 1);
+        cout << pos << endl;
         if (pos == std::string::npos)
+        {
+            cout << pos << endl;
             break;
-        newline.erase(pos, s1len);
-        newline.insert(pos, s2);
-        pos += s2.length();
+        }
     }
-    ofstream outFile((file + ".replace").c_str());
-    if(!outFile)
-    {
-        cout << "Failed to create new file!";
-        return 1;
-    }
-    outFile << newline;
-    return 0;
+    
+
+    cout << newline << endl;
+
+    // 3. do manipulation on a string than save it
+    // 4. create new file and store new string there
+
 }

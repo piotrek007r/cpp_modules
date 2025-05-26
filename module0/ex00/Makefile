@@ -1,21 +1,22 @@
 NAME = megaphone
 
-SRCS = megaphone.cpp
+SRCS = $(wildcard *.cpp)
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
+RM = rm -f
 
 all: $(NAME)
 
 .cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
 
 clean:
-	@$(RM)  $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)
