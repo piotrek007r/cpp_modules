@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 
-typedef std::string string;
+#include "Harl.hpp"
+
 
 #endif
