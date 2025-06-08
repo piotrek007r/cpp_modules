@@ -1,6 +1,6 @@
 NAME = zombie
 
-SRCS = *.cpp
+SRCS = $(wildcard *.cpp)
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++

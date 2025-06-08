@@ -3,12 +3,12 @@
 class HumanB
 {
     public:
-        HumanB(str name);
+        HumanB(std::string name);
         ~HumanB();
         void setWeapon(Weapon &weapon);
         void attack();
 
     private:
-        str name;
+        std::string name;
         Weapon *weapon;
 };

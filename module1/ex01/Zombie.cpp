@@ -5,7 +5,7 @@ Zombie::~Zombie() {
     std::cout << name << "boom!!! Czesio is gone!" << std::endl;
 }
 
-void Zombie::setName(str name)
+void Zombie::setName(std::string name)
 {
     this->name = name;
 }

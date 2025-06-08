@@ -6,8 +6,8 @@ int main(int argc, char **argv)
     {
         std::string level = argv[1];
         Harl Harl;
-        std::transform()
-        Harl.complain(argv[1]);
+        std::transform(level.begin(), level.end(), level.begin(), ::tolower);
+        Harl.complain(level);
     }
     else
     {

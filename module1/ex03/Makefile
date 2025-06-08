@@ -1,6 +1,6 @@
 NAME = violence
 
-SRCS = *.cpp
+SRCS = $(wildcard *.cpp)
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++

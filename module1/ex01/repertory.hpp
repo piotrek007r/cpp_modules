@@ -4,8 +4,6 @@
 #include <string>
 #include <iostream>
 
-typedef std::string str;
-
 #include "Zombie.hpp"
 
 Zombie* zombieHorde( int N, std::string name );

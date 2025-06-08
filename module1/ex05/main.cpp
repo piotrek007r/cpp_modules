@@ -7,10 +7,9 @@ int main()
 
     while(true)
     {
-        std::cout << std::endl;
         std::cout << "please type a comlain level: debug, info, warning, error, exit" << std::endl;
-        std::cout << std::endl;
         std::getline(std::cin, level);
+        std::transform(level.begin(), level.end(), level.begin(), ::tolower);
         if(level == "debug")
             Harl.complain("debug");
         else if(level == "info")
