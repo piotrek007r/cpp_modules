@@ -1,17 +1,14 @@
 #include "repertory.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+Zombie* zombieHorde( int n, std::string name )
 {
-    Zombie *zombie = new Zombie[N];
-
-    Zombie *first_zombie = zombie;
+    Zombie *zombie = new Zombie[n];
     
-    for(int i = 0; i < N; i++)
+    for(int i = 0; i < n; i++)
     {
-        zombie->setName(name);
-        zombie->annouce();
-        zombie++;
+        zombie[i].setName(name);
+        zombie[i].annouce();
     }
 
-    return first_zombie;
+    return zombie;
 }

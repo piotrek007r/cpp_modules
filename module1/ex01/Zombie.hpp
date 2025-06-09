@@ -10,5 +10,4 @@ class Zombie
 
     private:
         std::string name;
-        int index;
 };
