@@ -4,9 +4,10 @@ class Fixed
 {
     public:
         Fixed();
+        Fixed(const Fixed&);
         ~Fixed();
 
-        // now do a copy constructr
+
         void setRawBits( int const raw );
         int getRawBits( void );
     private:
@@ -14,38 +15,43 @@ class Fixed
         static const int fractNum = 8;
 };
 
-Fixed::Fixed()
-{
-    this->fixedNum = 0;
-    std::cout << "Default constructor called" << std::endl;
-}
+//Fixed::Fixed()
+//{
+//    this->fixedNum = 0;
+//    std::cout << "Default constructor called" << std::endl;
+//}
 
-Fixed::~Fixed() 
-{
-    std::cout << "Destructor called" << std::endl;
-}
+//Fixed::Fixed(const Fixed&)
+//{
+//    std::cout << "Copy constructor called" << std::endl;
+//}
 
-void Fixed::setRawBits(int const raw)
-{
-    this->fixedNum = raw;
-}
+//Fixed::~Fixed()
+//{
+//    std::cout << "Destructor called" << std::endl;
+//}
 
-int Fixed::getRawBits( void )
-{
-    std::cout << "getRawBits member function called" << std::endl;
-    return this->fixedNum;
-}
+//void Fixed::setRawBits(int const raw)
+//{
+//    this->fixedNum = raw;
+//}
 
-int main( void ) 
-{
-Fixed a;
-Fixed b( a );
-Fixed c;
+//int Fixed::getRawBits( void )
+//{
+//    std::cout << "getRawBits member function called" << std::endl;
+//    return this->fixedNum;
+//}
 
-c = b;
+//int main( void )
+//{
+//Fixed a;
+//Fixed b( a );
+//Fixed c;
 
-std::cout << a.getRawBits() << std::endl;
-std::cout << b.getRawBits() << std::endl;
-std::cout << c.getRawBits() << std::endl;
-return 0;
-}
+//c = b;
+
+//std::cout << a.getRawBits() << std::endl;
+//std::cout << b.getRawBits() << std::endl;
+//std::cout << c.getRawBits() << std::endl;
+//return 0;
+//}
