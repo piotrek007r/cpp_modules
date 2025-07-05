@@ -1,6 +1,8 @@
 NAME = trap
 
-SRCS = $(wildcard *.cpp)
+SRCS = main.cpp \
+	   ClapTrap.cpp
+
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
