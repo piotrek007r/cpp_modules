@@ -4,6 +4,9 @@ int main()
 {
     std::cout << "=== Creating ScavTrap ===" << std::endl;
     ScavTrap gateKeeper("Guardian");
+    std::cout << "AtackDMG: " << gateKeeper.getAttackDamage() << std::endl;  // Should be 20
+    std::cout << "Energy: " << gateKeeper.getEnergyPoints() << std::endl;  // Should be 50
+    std::cout << "HP: " << gateKeeper.getHitPoints() << std::endl;         // Should be 100
 
     std::cout << "\n=== Testing Attack ===" << std::endl;
     gateKeeper.attack("Intruder");

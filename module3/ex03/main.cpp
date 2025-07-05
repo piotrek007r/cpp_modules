@@ -2,30 +2,22 @@
 
 int main()
 {
-    std::cout << "=== Creating FragTrap ===" << std::endl;
-    FragTrap fragman("fragman");
+    DiamondTrap monster("monster");
 
-    std::cout << "\n=== Testing Attack ===" << std::endl;
-    fragman.attack("Intruder");
+    monster.whoAmI();  // Check name suffix and base name
 
-    std::cout << "\n=== Testing H5 request ===" << std::endl;
-    fragman.highFivesGuys();
+    std::cout << "AtackDMG: " << monster.getAttackDamage() << std::endl;  // Should be ScavTrap energy (50)
+    std::cout << "Energy: " << monster.getEnergyPoints() << std::endl;  // Should be ScavTrap energy (50)
+    std::cout << "HP: " << monster.getHitPoints() << std::endl;         // Should be FragTrap HP (100)
 
-    std::cout << "\n=== Testing Energy Drain ===" << std::endl;
-    fragman.setEnergyPoints(5);
-    for (int i = 0; i < 5; ++i)  
-        fragman.attack("Dummy");
+    monster.attack("Intruder");  // Should call ScavTrap attack
 
-    std::cout << "\n=== Testing Healing with No Energy ===" << std::endl;
-    fragman.beRepaired(10);  
+    DiamondTrap copyBot(monster);
+    copyBot.whoAmI();  // Confirm copy constructor copies correctly
+    std::cout << "AtackDMG: " << copyBot.getAttackDamage() << std::endl;  // Should be ScavTrap energy (50)
+    std::cout << "Energy: " << copyBot.getEnergyPoints() << std::endl;  // Should be ScavTrap energy (50)
+    std::cout << "HP: " << copyBot.getHitPoints() << std::endl;         // Should be FragTrap HP (100)
 
-    std::cout << "\n=== Testing Copy Constructor ===" << std::endl;
-    FragTrap copyBot(fragman);
 
-    std::cout << "\n=== Testing Assignment Operator ===" << std::endl;
-    FragTrap assignBot;
-    assignBot = fragman;
-
-    std::cout << "\n=== End of Program ===" << std::endl;
     return 0;
 }

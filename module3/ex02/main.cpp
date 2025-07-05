@@ -4,6 +4,9 @@ int main()
 {
     std::cout << "=== Creating FragTrap ===" << std::endl;
     FragTrap fragman("Guardian");
+    std::cout << "AtackDMG: " << fragman.getAttackDamage() << std::endl;  // Should be 30
+    std::cout << "Energy: " << fragman.getEnergyPoints() << std::endl;  // Should be 100
+    std::cout << "HP: " << fragman.getHitPoints() << std::endl;         // Should be 100
 
     std::cout << "\n=== Testing Attack ===" << std::endl;
     fragman.attack("Intruder");
