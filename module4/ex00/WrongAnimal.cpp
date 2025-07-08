@@ -1,4 +1,4 @@
-#include "wrongAnimal.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 #include <string>
 

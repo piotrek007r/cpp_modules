@@ -1,5 +1,5 @@
-#include "wrongCat.hpp"
-#include "wrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
 #include <iostream>
 #include <string>
 

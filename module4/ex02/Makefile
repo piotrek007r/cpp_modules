@@ -5,13 +5,14 @@ SRCS = main.cpp \
 	Cat.cpp \
 	Dog.cpp \
 	WrongAnimal.cpp \
-	WrongCat.cpp
+	WrongCat.cpp \
+	Brain.cpp 
 
 
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 all: $(NAME)
