@@ -1,6 +1,10 @@
-NAME = fixed
+NAME = bureaucrat
 
-SRCS = $(wildcard *.cpp)
+SRCS = main.cpp \
+    	Bureaucrat.cpp \
+		Form.cpp
+
+
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++

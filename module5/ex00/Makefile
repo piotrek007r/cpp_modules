@@ -1,10 +1,13 @@
-NAME = fixed
+NAME = bureaucrat
 
-SRCS = $(wildcard *.cpp)
+SRCS = main.cpp \
+    	Bureaucrat.cpp
+
+
 OBJS = ${SRCS:.cpp=.o}
 
 CC = c++
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
 all: $(NAME)
