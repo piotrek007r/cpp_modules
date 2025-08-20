@@ -3,11 +3,13 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
     const Bureaucrat *random = new Bureaucrat();
     Bureaucrat *domino = NULL;
+    Intern *poorSod = new Intern();
 
     try
     {
@@ -18,9 +20,9 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    AForm *presidentialPardonForm = new PresidentialPardonForm("Artur");
-    AForm *shrubberyreationForm = new ShrubberyCreationForm("Artur");
-    AForm *robotomyRequestForm = new RobotomyRequestForm("Artur");
+    AForm *presidentialPardonForm = poorSod->makeForm("presidental pardon", "Artur");
+    AForm *shrubberyreationForm = poorSod->makeForm("robotomy request", "Artur");
+    AForm *robotomyRequestForm = poorSod->makeForm("shrubbery creation", "Artur");
 
     domino->signForm(*presidentialPardonForm);
     domino->signForm(*shrubberyreationForm);
@@ -56,6 +58,7 @@ int main()
     delete presidentialPardonForm;
     delete shrubberyreationForm;
     delete robotomyRequestForm;
+    delete poorSod;
     delete random;
 
     return 0;
