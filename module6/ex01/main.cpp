@@ -1,14 +1,16 @@
-#include "serializer.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    if(argc == 2)
-    {
-        Data *data;;
+        Data str;
+        Data *data = &str;
+        Data *newptr = NULL;
+        uintptr_t adr = 0;
 
-        Serializer::serialize(data);
+        adr = Serializer::serialize(data);
+        std::cout << data << std::endl;
+        std::cout << adr << std::endl;
+        newptr = Serializer::deserialize(adr);
+        std::cout << newptr << std::endl;
         return 1;
-    }
-    else
-        return 0;
 }
