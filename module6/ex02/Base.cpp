@@ -29,22 +29,23 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
+    Base dummy;
     try
     {
-        dynamic_cast<A&>(p);
+        dummy = dynamic_cast<A&>(p);
         std::cout << "A was created(reference)" << std::endl;
-        return;    
+        return;
     } catch(...) {}
     try
     {
-        dynamic_cast<B&>(p);
+        dummy = dynamic_cast<B&>(p);
         std::cout << "B was created(reference)" << std::endl;
-        return;    
+        return;
     } catch(...) {}
     try
     {
-        dynamic_cast<C&>(p);
+        dummy = dynamic_cast<C&>(p);
         std::cout << "C was created(reference)" << std::endl;
-        return;    
-    } catch(...) {}    
+        return;
+    } catch(...) {}
 }
