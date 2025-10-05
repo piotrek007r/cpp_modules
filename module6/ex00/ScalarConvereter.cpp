@@ -172,18 +172,18 @@ void ScalarConverter::convert(std::string str)
             std::cout << "int: " << "impossible" << std::endl;
             if(str == "-inff")
             {
-                std::cout << "float: " << "-infff" <<std::endl;
-                std::cout << "double: " << "-inff" <<std::endl;
+                std::cout << "float: " << "-inff" <<std::endl;
+                std::cout << "double: " << "-inf" <<std::endl;
             }
             if(str == "+inff")
             {
-                std::cout << "float: " << "+infff" <<std::endl;
-                std::cout << "double: " << "+inff" <<std::endl;
+                std::cout << "float: " << "+inff" <<std::endl;
+                std::cout << "double: " << "+inf" <<std::endl;
             }
             if(str == "nanf")
             {
-                std::cout << "float: " << "nanff" <<std::endl;
-                std::cout << "double: " << "nanf" <<std::endl;
+                std::cout << "float: " << "nanf" <<std::endl;
+                std::cout << "double: " << "nan" <<std::endl;
             }
         }
         else
