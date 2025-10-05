@@ -7,11 +7,12 @@
 #include <time.h>
 
 
-// template <typename T>
+
+template <typename T>
 class Array
 {
     private: 
-        int *arr;
+        T *arr;
         unsigned int arrLen;
 
     public:
@@ -20,8 +21,9 @@ class Array
         Array(const Array &other);
         Array &operator=(const Array &other);
         ~Array();
-        int size();
-        int& operator[](unsigned int arrLen); 
+        int size() const;
+        T& operator[](unsigned int arrLen); 
 };
 
+#include "Array.tpp"
 #endif
