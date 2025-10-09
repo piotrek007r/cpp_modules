@@ -3,16 +3,19 @@
 
 #include <algorithm>
 #include <vector>
-#include <array>
-#include <list>>
+#include <list>
 #include <deque>
-#include <forward_list>
+#include <iostream>
 
 
 template <typename T>
-T easyfind(T con, int el)
+void easyfind(T& con, int el)
 {
-	std::find(con.begin(), con.end(), el)
+	typename T::iterator iter =  std::find(con.begin(), con.end(), el);
+	if(iter == con.end())
+		std::cout << "could not find given element in container\n";
+	else
+		std::cout << "given element is: " << *iter << std::endl;
 }
 
 #endif
