@@ -52,6 +52,7 @@
         "ranges": "cpp",
         "span": "cpp",
         "forward_list": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "map": "cpp"
     }
 }
