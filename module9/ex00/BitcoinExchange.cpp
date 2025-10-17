@@ -6,6 +6,21 @@ Bitcoin::Bitcoin(char *path)
     this->compareDB(path);
 }
 
+Bitcoin::Bitcoin() {}
+
+Bitcoin::~Bitcoin() {}
+
+Bitcoin::Bitcoin(const Bitcoin& other) : path(other.path), btcChart(other.btcChart) {}
+
+Bitcoin& Bitcoin::operator=(const Bitcoin& other)
+{
+    if(this != &other)
+    {
+        this->path = other.path;
+        this->btcChart = other.btcChart;
+    }    
+}
+
 void Bitcoin::setBtcChart()
 {
     std::string line;

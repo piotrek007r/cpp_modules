@@ -14,6 +14,10 @@ class Bitcoin
         std::string path;
 
     public:
+        Bitcoin();
+        ~Bitcoin();
+        Bitcoin(const Bitcoin& other);
+        Bitcoin& operator=(const Bitcoin& other);
         Bitcoin(char *path);
         void setBtcChart();
         void compareDB(char *path);
