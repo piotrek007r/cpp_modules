@@ -10,7 +10,7 @@ Bitcoin::Bitcoin() {}
 
 Bitcoin::~Bitcoin() {}
 
-Bitcoin::Bitcoin(const Bitcoin& other) : path(other.path), btcChart(other.btcChart) {}
+Bitcoin::Bitcoin(const Bitcoin& other) : btcChart(other.btcChart), path(other.path) {}
 
 Bitcoin& Bitcoin::operator=(const Bitcoin& other)
 {
@@ -18,7 +18,8 @@ Bitcoin& Bitcoin::operator=(const Bitcoin& other)
     {
         this->path = other.path;
         this->btcChart = other.btcChart;
-    }    
+    }
+    return *this;    
 }
 
 void Bitcoin::setBtcChart()
