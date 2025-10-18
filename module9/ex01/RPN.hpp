@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <stack>
+#include <string>
+#include <sstream>
+#include <stdlib.h>
+
 
 class RPN
 {
@@ -10,7 +14,9 @@ class RPN
         std::stack<int> stack;
 
     public:
-       void convertFromRPN(char *rpn);
+       void convertFromRPN(std::string rpn);
+       int calc(int left, int right, std::string tok);
+       void error(int i);
 };
 
 #endif
