@@ -1,0 +1,129 @@
+#include "PmergeMe.hpp"
+
+void    printLoser(std::list<intEl> los_lst)
+{
+        std::cout << std::endl;
+        std::list<intEl>::iterator losers = los_lst.begin();
+        
+        std::cout << "losers!: \n";
+        for(;losers != los_lst.end(); losers++)
+        {
+            std::cout << losers->number << " "; 
+        }
+        std::cout << std::endl;
+}
+
+void printwinners(std::list<intEl> seq_lst)
+{
+            std::list<intEl>::iterator winners = seq_lst.begin();
+        
+        std::cout << "winners!: \n";
+        for(;winners != seq_lst.end(); winners++)
+        {
+            std::cout << winners->number << " "; 
+        }
+        std::cout << std::endl;
+}
+
+PmergeMe::PmergeMe(std::vector<int> seq_v, std::list<int> lst) : seq_v(seq_v), level(0)
+{
+    std::list<int>::iterator itInt = lst.begin();
+    for(; itInt != lst.end(); itInt++)
+    {
+        intEl intEl;
+        intEl.number = *itInt;
+        intEl.loseTo = -1;
+        intEl.winTo = -1;
+        this->seq_lst.push_back(intEl);
+    }
+}
+
+std::list<intEl>::iterator findLoser(std::list<intEl>::iterator prev, std::list<intEl>::iterator next)
+{
+    if(prev->number < next->number)
+    {
+        prev->loseTo = next->number;
+        next->winTo = prev->number;
+        return prev;
+    }
+    else
+    {
+        next->loseTo = prev->number;
+        prev->winTo = next->number;
+        return next;
+    }
+}
+
+bool isOdd(int listSize)
+{
+    if(listSize % 2 == 1)
+        return true;
+    return false;
+} 
+
+std::list<intEl>::iterator PmergeMe::compareWtoL(std::list<intEl>::iterator losIt, std::list<intEl> &losLst)
+{
+            std::list<intEl>::iterator temp = losIt;
+            losIt++;  
+            std::list<intEl>::iterator insertIt = this->seq_lst.begin();
+            while (insertIt != this->seq_lst.end() && insertIt->number < temp->number)
+                ++insertIt;
+            this->seq_lst.splice(insertIt, losLst, temp); 
+            printwinners(this->seq_lst);
+
+    return losIt;
+}
+
+
+void PmergeMe::sortList()
+{
+    std::list<intEl> los_lst;   
+    while(seq_lst.size() > 1)
+    {
+        size_t list_size = seq_lst.size();
+        std::list<intEl>::iterator it = seq_lst.begin();
+        it++;
+        std::list<intEl>::iterator elToSplice;
+        size_t level = 0;
+        for(size_t i = 0; i < seq_lst.size(); i++)
+        {
+            std::list<intEl>::iterator prev = it;
+            level++;
+            prev--;
+            elToSplice = findLoser(prev, it);
+            if(level == (list_size / 2 + 1) && isOdd(list_size))
+            {
+                std::advance(it, 1);
+                break;
+            }
+            else if(level < list_size / 2)
+                std::advance(it, 2);
+            los_lst.splice(los_lst.end(), seq_lst, elToSplice);
+        }
+        
+        printwinners(this->seq_lst);
+        printLoser(los_lst);
+    }
+
+    size_t temp = 0;
+    for(int i = 0; i < 3; i++)
+    {   
+        size_t loopSize = std::pow(2, temp);
+        std::cout << "next num of iterations: " << loopSize << std::endl;
+        temp++;
+        std::list<intEl>::iterator losIt = los_lst.end();
+        std::advance(losIt, -loopSize); // point back to upper level of losers
+        for(size_t i = 0; i < loopSize; i++)
+        {
+            std::cout << "--------------\n"; 
+            losIt = compareWtoL(losIt, los_lst);            
+        }
+    }
+    std::list<intEl>::iterator losIt = los_lst.end();
+    while(losIt != los_lst.begin())
+    {
+        losIt--;
+        std::cout << "number: " << losIt->number << " lost to: " << losIt->loseTo << " win to: " 
+        << losIt->winTo << std::endl;
+    }
+}
